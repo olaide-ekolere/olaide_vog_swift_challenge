@@ -13,8 +13,13 @@
 		17F14970250017C90079AC13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F1496F250017C90079AC13 /* Assets.xcassets */; };
 		17F14973250017C90079AC13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F14972250017C90079AC13 /* Preview Assets.xcassets */; };
 		17F14976250017C90079AC13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F14974250017C90079AC13 /* LaunchScreen.storyboard */; };
-		17F14981250017C90079AC13 /* vogswiftchallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F14980250017C90079AC13 /* vogswiftchallengeTests.swift */; };
 		17F1498C250017C90079AC13 /* vogswiftchallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1498B250017C90079AC13 /* vogswiftchallengeUITests.swift */; };
+		17F1499F250051580079AC13 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1499E250051580079AC13 /* Responses.swift */; };
+		17F149A12500540A0079AC13 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149A02500540A0079AC13 /* UserError.swift */; };
+		17F149A5250069C90079AC13 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149A4250069C90079AC13 /* Parsing.swift */; };
+		17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149A625006EB10079AC13 /* UserFetcher.swift */; };
+		17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149AA25018A330079AC13 /* URLProtocolMock.swift */; };
+		17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149AE250193490079AC13 /* UserFetcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +49,16 @@
 		17F14975250017C90079AC13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F14977250017C90079AC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F1497C250017C90079AC13 /* vogswiftchallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vogswiftchallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17F14980250017C90079AC13 /* vogswiftchallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vogswiftchallengeTests.swift; sourceTree = "<group>"; };
 		17F14982250017C90079AC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F14987250017C90079AC13 /* vogswiftchallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vogswiftchallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F1498B250017C90079AC13 /* vogswiftchallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vogswiftchallengeUITests.swift; sourceTree = "<group>"; };
 		17F1498D250017C90079AC13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F1499E250051580079AC13 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		17F149A02500540A0079AC13 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		17F149A4250069C90079AC13 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		17F149A625006EB10079AC13 /* UserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcher.swift; sourceTree = "<group>"; };
+		17F149AA25018A330079AC13 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		17F149AE250193490079AC13 /* UserFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +109,10 @@
 		17F14968250017C50079AC13 /* vogswiftchallenge */ = {
 			isa = PBXGroup;
 			children = (
+				17F149A22500696E0079AC13 /* Utilities */,
+				17F1499D250051000079AC13 /* User */,
 				17F1499B250044470079AC13 /* Resources */,
 				17F1499A250044190079AC13 /* Main */,
-				17F149992500425A0079AC13 /* Models */,
 				17F14971250017C90079AC13 /* Preview Content */,
 			);
 			path = vogswiftchallenge;
@@ -118,7 +129,7 @@
 		17F1497F250017C90079AC13 /* vogswiftchallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				17F14980250017C90079AC13 /* vogswiftchallengeTests.swift */,
+				17F149AC250192DC0079AC13 /* User */,
 				17F14982250017C90079AC13 /* Info.plist */,
 			);
 			path = vogswiftchallengeTests;
@@ -131,13 +142,6 @@
 				17F1498D250017C90079AC13 /* Info.plist */,
 			);
 			path = vogswiftchallengeUITests;
-			sourceTree = "<group>";
-		};
-		17F149992500425A0079AC13 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		17F1499A250044190079AC13 /* Main */ = {
@@ -158,6 +162,65 @@
 				17F14977250017C90079AC13 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17F1499D250051000079AC13 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				17F149A825006EC80079AC13 /* UserAPI */,
+				17F1499E250051580079AC13 /* Responses.swift */,
+				17F149A02500540A0079AC13 /* UserError.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		17F149A22500696E0079AC13 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				17F149A92501809F0079AC13 /* Mock */,
+				17F149A32500698A0079AC13 /* Parsing */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		17F149A32500698A0079AC13 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				17F149A4250069C90079AC13 /* Parsing.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		17F149A825006EC80079AC13 /* UserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				17F149A625006EB10079AC13 /* UserFetcher.swift */,
+			);
+			path = UserAPI;
+			sourceTree = "<group>";
+		};
+		17F149A92501809F0079AC13 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				17F149AA25018A330079AC13 /* URLProtocolMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		17F149AC250192DC0079AC13 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				17F149AD250192E60079AC13 /* UserAPI */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		17F149AD250192E60079AC13 /* UserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				17F149AE250193490079AC13 /* UserFetcherTest.swift */,
+			);
+			path = UserAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +354,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F1499F250051580079AC13 /* Responses.swift in Sources */,
 				17F1496A250017C50079AC13 /* AppDelegate.swift in Sources */,
+				17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */,
 				17F1496C250017C50079AC13 /* SceneDelegate.swift in Sources */,
+				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
+				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
+				17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F14981250017C90079AC13 /* vogswiftchallengeTests.swift in Sources */,
+				17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
