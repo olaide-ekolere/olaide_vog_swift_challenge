@@ -137,6 +137,29 @@ class UserFetcherTest: XCTestCase {
         cancellable.cancel()
     }
 
+    func testFetchUserNetworkFailure() {
+        let fetchUserUrl = URL(string: UserFetcher.url)
+        URLProtocolMock.testURLs = [fetchUserUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
+        URLProtocolMock.error = mocks.networkError
+        let publisher = userFetcher.userDetails(withToken: mocks.authorizationToken)
+        XCTAssertNotNil(publisher)
+        let cancellable = publisher.sink (
+          receiveCompletion: { (completion) in
+            switch completion {
+            case .failure(let error):
+                XCTAssert(true, error.localizedDescription)
+            case .finished:
+                XCTAssert(false, "Call should fail")
+            }
+          },
+          receiveValue: { userResponse in
+            XCTAssertNil(userResponse, "User response should be null")
+          }
+        )
+        
+        cancellable.cancel()
+    }
+
     /*
     func testPerformanceExample() {
         // This is an example of a performance test case.
