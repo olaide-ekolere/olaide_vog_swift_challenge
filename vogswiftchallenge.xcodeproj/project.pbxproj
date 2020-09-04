@@ -28,6 +28,8 @@
 		17F149CB250274D70079AC13 /* MockValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149CA250274D70079AC13 /* MockValues.swift */; };
 		17F149CF2502806C0079AC13 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149CE2502806C0079AC13 /* UserProfileView.swift */; };
 		17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D0250299FA0079AC13 /* UserResponseView.swift */; };
+		17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */; };
+		17F149D62502B32D0079AC13 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D52502B32D0079AC13 /* UserUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		17F149CA250274D70079AC13 /* MockValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValues.swift; sourceTree = "<group>"; };
 		17F149CE2502806C0079AC13 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		17F149D0250299FA0079AC13 /* UserResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseView.swift; sourceTree = "<group>"; };
+		17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcher.swift; sourceTree = "<group>"; };
+		17F149D52502B32D0079AC13 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 		17F1499D250051000079AC13 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				17F149D22502B0820079AC13 /* UserUpdate */,
 				17F149B32501CDBB0079AC13 /* UserProfile */,
 				17F149A825006EC80079AC13 /* UserAPI */,
 				17F1499E250051580079AC13 /* Responses.swift */,
@@ -261,6 +266,15 @@
 				17F149B82501DC0B0079AC13 /* UserProfileViewModelTest.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		17F149D22502B0820079AC13 /* UserUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */,
+				17F149D52502B32D0079AC13 /* UserUpdate.swift */,
+			);
+			path = UserUpdate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +419,9 @@
 				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
 				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
 				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
+				17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
+				17F149D62502B32D0079AC13 /* UserUpdate.swift in Sources */,
 				17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */,
 				17F149B52501CDF80079AC13 /* UserProfileViewModel.swift in Sources */,
 			);
