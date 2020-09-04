@@ -30,14 +30,14 @@ class UserUpdateViewModelTest: XCTestCase {
         let userUpdateFetcher = UserUpdateFetcherMock(message: successMessage)
         let viewModel = UserUpdateViewModel(item: userResponse, userUpdateFetcher: userUpdateFetcher, authorizationToken: mocks.authorizationToken);
         XCTAssertNotNil(viewModel)
-        XCTAssertNil(viewModel.dataSource)
+        XCTAssertEqual(viewModel.dataSource.count, 0)
         XCTAssert(!viewModel.isLoading)
         
         viewModel.performUserUpdate(userUpdate: userUpdate)
         let expectation = XCTestExpectation()
         DispatchQueue.main.asyncAfter(deadline: .now()+5) {
             XCTAssert(!viewModel.isLoading)
-            XCTAssertEqual(viewModel.dataSource!, self.successMessage)
+            XCTAssertEqual(viewModel.dataSource, self.successMessage)
             expectation.fulfill()
         }
         
@@ -50,14 +50,14 @@ class UserUpdateViewModelTest: XCTestCase {
         let userUpdateFetcher = UserUpdateFetcherMock(message: failedMessage)
         let viewModel = UserUpdateViewModel(item: userResponse, userUpdateFetcher: userUpdateFetcher, authorizationToken: mocks.authorizationToken);
         XCTAssertNotNil(viewModel)
-        XCTAssertNil(viewModel.dataSource)
+        XCTAssertEqual(viewModel.dataSource.count, 0)
         XCTAssert(!viewModel.isLoading)
         
         viewModel.performUserUpdate(userUpdate: userUpdate)
         let expectation = XCTestExpectation()
         DispatchQueue.main.asyncAfter(deadline: .now()+5) {
             XCTAssert(!viewModel.isLoading)
-            XCTAssertEqual(viewModel.dataSource!, self.failedMessage)
+            XCTAssertEqual(viewModel.dataSource, self.failedMessage)
             expectation.fulfill()
         }
         

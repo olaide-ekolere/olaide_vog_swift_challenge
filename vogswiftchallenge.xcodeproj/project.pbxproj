@@ -34,6 +34,7 @@
 		17F149DD2502BC2D0079AC13 /* UserUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */; };
 		17F149DF2502C3630079AC13 /* UserUpdateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DE2502C3630079AC13 /* UserUpdateViewModelTest.swift */; };
 		17F149E12502C3990079AC13 /* UserUpdateFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */; };
+		17F149E32502D3290079AC13 /* UserUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149E22502D3290079AC13 /* UserUpdateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateViewModel.swift; sourceTree = "<group>"; };
 		17F149DE2502C3630079AC13 /* UserUpdateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateViewModelTest.swift; sourceTree = "<group>"; };
 		17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcherMock.swift; sourceTree = "<group>"; };
+		17F149E22502D3290079AC13 /* UserUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 				17F149D52502B32D0079AC13 /* UserUpdate.swift */,
 				17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */,
 				17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */,
+				17F149E22502D3290079AC13 /* UserUpdateView.swift */,
 			);
 			path = UserUpdate;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
 				17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
+				17F149E32502D3290079AC13 /* UserUpdateView.swift in Sources */,
 				17F149D62502B32D0079AC13 /* UserUpdate.swift in Sources */,
 				17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */,
 				17F149B52501CDF80079AC13 /* UserProfileViewModel.swift in Sources */,

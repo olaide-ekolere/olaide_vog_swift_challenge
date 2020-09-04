@@ -15,7 +15,7 @@ class UserProfileViewModel: ObservableObject {
     
     private let userFetcher: UserFetchable
     private var disposables = Set<AnyCancellable>()
-    private let authorizationToken: String
+    let authorizationToken: String
     init(
         userFetcher: UserFetchable,
         authorizationToken: String) {

@@ -10,9 +10,12 @@ import SwiftUI
 
 struct UserProfileView: View {
     @ObservedObject var viewModel: UserProfileViewModel
-    init(viewModel: UserProfileViewModel) {
+    private let userUpdateFetcher: UserUpdateFetchable
+    init(viewModel: UserProfileViewModel,
+    userUpdateFetcher: UserUpdateFetchable) {
         self.viewModel = viewModel
-        UINavigationBar.appearance().backgroundColor = .white
+        self.userUpdateFetcher = userUpdateFetcher
+        UINavigationBar.appearance().backgroundColor = .none
         
     }
     var body: some View {
@@ -29,7 +32,7 @@ struct UserProfileView: View {
 private extension UserProfileView {
     func content() -> some View {
         if let viewModel = viewModel.dataSource {
-            return AnyView(UserResponseView(viewModel: viewModel)
+            return AnyView(UserResponseView(userUpdateFetcher: userUpdateFetcher, viewModel: viewModel, authToken: self.viewModel.authorizationToken)
                 .accessibility(identifier: "UserResponseView"))
         }
         else{

@@ -20,10 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         // Create the SwiftUI view that provides the window contents.
+        let token = "wihcw8yr394fvberfvg378"
+        let message = "User Retrieved"
         let userFetcher = UserFetcherMock(data: Data(MockValues.fetchUserSuccessResponse.utf8))
         let viewModel = UserProfileViewModel(userFetcher: userFetcher,
-                                             authorizationToken: "wihcw8yr394fvberfvg378")
-        let userProfileView = UserProfileView(viewModel: viewModel)
+                                             authorizationToken: token)
+        let userUpdateFetcherMock = UserUpdateFetcherMock(message: message)
+        let userProfileView = UserProfileView(viewModel: viewModel, userUpdateFetcher: userUpdateFetcherMock)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

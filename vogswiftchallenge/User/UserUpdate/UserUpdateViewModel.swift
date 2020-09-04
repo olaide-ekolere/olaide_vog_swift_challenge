@@ -12,10 +12,10 @@ import Combine
 class UserUpdateViewModel : ObservableObject {
     @Published var firstName: String = ""
     @Published var lastName: String = ""
-    @Published var dataSource: String?
+    @Published var dataSource: String = ""
     @Published var isLoading: Bool = false
     
-    let userName: String
+      @Published var userName: String = ""
     
     
     private let userUpdateFetcher: UserUpdateFetchable
@@ -33,7 +33,7 @@ class UserUpdateViewModel : ObservableObject {
     
     
     func performUserUpdate(userUpdate: UserUpdate) {
-        dataSource = nil
+        dataSource = ""
         isLoading = true
         userUpdateFetcher.performUserUpdate(userUpdate: userUpdate, withToken: self.authorizationToken)
         .map(UserResponseViewModel.init)
@@ -54,7 +54,7 @@ class UserUpdateViewModel : ObservableObject {
             },
             receiveValue: { [weak self] userResponseViewModel in
                 guard let self = self else { return }
-                self.dataSource = userResponseViewModel.item.message
+                self.dataSource = "Update Successfull" //userResponseViewModel.item.message
                 let data = userResponseViewModel.item.data
                 self.firstName = data.firstName
                 self.lastName = data.lastName

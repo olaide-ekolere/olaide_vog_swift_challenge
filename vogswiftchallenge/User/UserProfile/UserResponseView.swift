@@ -10,14 +10,19 @@ import SwiftUI
 
 struct UserResponseView: View {
     private let viewModel: UserResponseViewModel
-    
-    init(viewModel: UserResponseViewModel) {
+    private let authToken: String
+    private let userUpdateFetcher: UserUpdateFetchable
+    init(userUpdateFetcher: UserUpdateFetchable, viewModel: UserResponseViewModel, authToken: String) {
+        self.userUpdateFetcher = userUpdateFetcher
         self.viewModel = viewModel
+        self.authToken = authToken
     }
     var body: some View {
-        Text("\(viewModel.item.data.firstName) \(viewModel.item.data.lastName)")
-            .foregroundColor(.white)
-        
+        ScrollView(.vertical) {
+          VStack {
+            UserUpdateView(viewModel: UserUpdateViewModel(item: viewModel.item, userUpdateFetcher: self.userUpdateFetcher, authorizationToken: self.authToken))
+          }
+        }
     }
 }
 
