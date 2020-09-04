@@ -10,9 +10,17 @@ import Foundation
 
 struct UserResponse: Codable {
     let message: String
-    let data: Data
-    
-    struct Data: Codable {
+    let data: UserData
+    init() {
+        message = "User Retrieved"
+        data = UserData()
+    }
+    struct UserData: Codable {
+        init() {
+            firstName = "olaide"
+            lastName = "ekeolere"
+            userName = "iOS"
+        }
         let firstName: String
         let userName: String
         let lastName: String

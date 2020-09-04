@@ -20,6 +20,12 @@
 		17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149A625006EB10079AC13 /* UserFetcher.swift */; };
 		17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149AA25018A330079AC13 /* URLProtocolMock.swift */; };
 		17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149AE250193490079AC13 /* UserFetcherTest.swift */; };
+		17F149B52501CDF80079AC13 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149B42501CDF80079AC13 /* UserProfileViewModel.swift */; };
+		17F149B92501DC0B0079AC13 /* UserProfileViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149B82501DC0B0079AC13 /* UserProfileViewModelTest.swift */; };
+		17F149BF2501E1AD0079AC13 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149BE2501E1AD0079AC13 /* Mocks.swift */; };
+		17F149C325024DCB0079AC13 /* UserResponseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149C225024DCB0079AC13 /* UserResponseViewModel.swift */; };
+		17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149C825026A740079AC13 /* UserFetcherMock.swift */; };
+		17F149CB250274D70079AC13 /* MockValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149CA250274D70079AC13 /* MockValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		17F149A625006EB10079AC13 /* UserFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcher.swift; sourceTree = "<group>"; };
 		17F149AA25018A330079AC13 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		17F149AE250193490079AC13 /* UserFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcherTest.swift; sourceTree = "<group>"; };
+		17F149B42501CDF80079AC13 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		17F149B82501DC0B0079AC13 /* UserProfileViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModelTest.swift; sourceTree = "<group>"; };
+		17F149BE2501E1AD0079AC13 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		17F149C225024DCB0079AC13 /* UserResponseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseViewModel.swift; sourceTree = "<group>"; };
+		17F149C825026A740079AC13 /* UserFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcherMock.swift; sourceTree = "<group>"; };
+		17F149CA250274D70079AC13 /* MockValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +179,7 @@
 		17F1499D250051000079AC13 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				17F149B32501CDBB0079AC13 /* UserProfile */,
 				17F149A825006EC80079AC13 /* UserAPI */,
 				17F1499E250051580079AC13 /* Responses.swift */,
 				17F149A02500540A0079AC13 /* UserError.swift */,
@@ -195,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				17F149A625006EB10079AC13 /* UserFetcher.swift */,
+				17F149C825026A740079AC13 /* UserFetcherMock.swift */,
 			);
 			path = UserAPI;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				17F149AA25018A330079AC13 /* URLProtocolMock.swift */,
+				17F149CA250274D70079AC13 /* MockValues.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -210,7 +225,9 @@
 		17F149AC250192DC0079AC13 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				17F149B72501DBC10079AC13 /* UserProfile */,
 				17F149AD250192E60079AC13 /* UserAPI */,
+				17F149BE2501E1AD0079AC13 /* Mocks.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -221,6 +238,23 @@
 				17F149AE250193490079AC13 /* UserFetcherTest.swift */,
 			);
 			path = UserAPI;
+			sourceTree = "<group>";
+		};
+		17F149B32501CDBB0079AC13 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				17F149B42501CDF80079AC13 /* UserProfileViewModel.swift */,
+				17F149C225024DCB0079AC13 /* UserResponseViewModel.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		17F149B72501DBC10079AC13 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				17F149B82501DC0B0079AC13 /* UserProfileViewModelTest.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,12 +390,16 @@
 			files = (
 				17F1499F250051580079AC13 /* Responses.swift in Sources */,
 				17F1496A250017C50079AC13 /* AppDelegate.swift in Sources */,
+				17F149C325024DCB0079AC13 /* UserResponseViewModel.swift in Sources */,
 				17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */,
 				17F1496C250017C50079AC13 /* SceneDelegate.swift in Sources */,
+				17F149CB250274D70079AC13 /* MockValues.swift in Sources */,
+				17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */,
 				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
 				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
 				17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */,
+				17F149B52501CDF80079AC13 /* UserProfileViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +408,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */,
+				17F149B92501DC0B0079AC13 /* UserProfileViewModelTest.swift in Sources */,
+				17F149BF2501E1AD0079AC13 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

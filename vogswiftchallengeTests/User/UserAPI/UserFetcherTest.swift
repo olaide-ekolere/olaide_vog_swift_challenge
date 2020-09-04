@@ -10,39 +10,6 @@ import XCTest
 
 @testable import vogswiftchallenge
 
-class Mocks {
-    let authorizationToken = "JHIHWIV8WYFEUBF3BGF3F3FVE"
-    
-    let invalidResponse = URLResponse(url: URL(string: UserFetcher.url)!,
-                                      mimeType: nil,
-                                      expectedContentLength: 0,
-                                      textEncodingName: nil)
-    
-    
-    let validResponse = HTTPURLResponse(url: URL(string: UserFetcher.url)!,
-                                    statusCode: 200,
-                                    httpVersion: nil,
-                                    headerFields: nil)
-    
-    let networkError = NSError(domain: "NSURLErrorDomain",
-                               code: -1004,
-                               userInfo: nil)
-}
-
-struct Fixtures {
-    static let fetchUserSuccessResponse = """
-    {
-       "message": "User Retrieved",
-       "data":
-       {
-          "firstName": "Johnny B"
-          "userName": "iOS User"
-          "lastName": "Goode"
-       }
-    }
-    """
-    
-}
 
 class UserFetcherTest: XCTestCase {
 
