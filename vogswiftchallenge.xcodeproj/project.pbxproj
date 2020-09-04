@@ -31,6 +31,9 @@
 		17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */; };
 		17F149D62502B32D0079AC13 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D52502B32D0079AC13 /* UserUpdate.swift */; };
 		17F149DB2502B7590079AC13 /* UserUpdateFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */; };
+		17F149DD2502BC2D0079AC13 /* UserUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */; };
+		17F149DF2502C3630079AC13 /* UserUpdateViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DE2502C3630079AC13 /* UserUpdateViewModelTest.swift */; };
+		17F149E12502C3990079AC13 /* UserUpdateFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcher.swift; sourceTree = "<group>"; };
 		17F149D52502B32D0079AC13 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
 		17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcherTest.swift; sourceTree = "<group>"; };
+		17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateViewModel.swift; sourceTree = "<group>"; };
+		17F149DE2502C3630079AC13 /* UserUpdateViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateViewModelTest.swift; sourceTree = "<group>"; };
+		17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcherMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +282,8 @@
 			children = (
 				17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */,
 				17F149D52502B32D0079AC13 /* UserUpdate.swift */,
+				17F149DC2502BC2D0079AC13 /* UserUpdateViewModel.swift */,
+				17F149E02502C3990079AC13 /* UserUpdateFetcherMock.swift */,
 			);
 			path = UserUpdate;
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */,
+				17F149DE2502C3630079AC13 /* UserUpdateViewModelTest.swift */,
 			);
 			path = UserUpdate;
 			sourceTree = "<group>";
@@ -424,11 +433,13 @@
 				17F149C325024DCB0079AC13 /* UserResponseViewModel.swift in Sources */,
 				17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */,
 				17F1496C250017C50079AC13 /* SceneDelegate.swift in Sources */,
+				17F149E12502C3990079AC13 /* UserUpdateFetcherMock.swift in Sources */,
 				17F149CF2502806C0079AC13 /* UserProfileView.swift in Sources */,
 				17F149CB250274D70079AC13 /* MockValues.swift in Sources */,
 				17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */,
 				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
 				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
+				17F149DD2502BC2D0079AC13 /* UserUpdateViewModel.swift in Sources */,
 				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
 				17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
@@ -442,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F149DF2502C3630079AC13 /* UserUpdateViewModelTest.swift in Sources */,
 				17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */,
 				17F149DB2502B7590079AC13 /* UserUpdateFetcherTest.swift in Sources */,
 				17F149B92501DC0B0079AC13 /* UserProfileViewModelTest.swift in Sources */,
