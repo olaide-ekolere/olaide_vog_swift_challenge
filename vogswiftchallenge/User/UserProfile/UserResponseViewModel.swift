@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Combine
 
 struct UserResponseViewModel {
-    private let item: UserResponse
+    let item: UserResponse
     init(item: UserResponse) {
         self.item = item
     }

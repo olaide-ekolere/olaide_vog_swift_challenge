@@ -27,6 +27,7 @@
 		17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149C825026A740079AC13 /* UserFetcherMock.swift */; };
 		17F149CB250274D70079AC13 /* MockValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149CA250274D70079AC13 /* MockValues.swift */; };
 		17F149CF2502806C0079AC13 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149CE2502806C0079AC13 /* UserProfileView.swift */; };
+		17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D0250299FA0079AC13 /* UserResponseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		17F149C825026A740079AC13 /* UserFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFetcherMock.swift; sourceTree = "<group>"; };
 		17F149CA250274D70079AC13 /* MockValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockValues.swift; sourceTree = "<group>"; };
 		17F149CE2502806C0079AC13 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		17F149D0250299FA0079AC13 /* UserResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 				17F149B42501CDF80079AC13 /* UserProfileViewModel.swift */,
 				17F149C225024DCB0079AC13 /* UserResponseViewModel.swift */,
 				17F149CE2502806C0079AC13 /* UserProfileView.swift */,
+				17F149D0250299FA0079AC13 /* UserResponseView.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */,
 				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
 				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
+				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
 				17F149AB25018A330079AC13 /* URLProtocolMock.swift in Sources */,
 				17F149B52501CDF80079AC13 /* UserProfileViewModel.swift in Sources */,

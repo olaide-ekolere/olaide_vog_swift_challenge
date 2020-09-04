@@ -18,12 +18,30 @@ struct UserProfileView: View {
     var body: some View {
         NavigationView {
             ZStack { Color.init(red: 143.0/255.0, green: 32.0/255.0, blue: 31.0/255.0).edgesIgnoringSafeArea(.bottom)
-                VStack {
-                    Text("Welcome\nTo\nSwiftUI")
-                }
+                content()
             }
+            .onAppear(perform: viewModel.fetchUserProfile)
             .navigationBarTitle("User Profile")
         }
+    }
+}
+
+private extension UserProfileView {
+    func content() -> some View {
+        if let viewModel = viewModel.dataSource {
+            return AnyView(UserResponseView(viewModel: viewModel)
+                .accessibility(identifier: "UserResponseView"))
+        }
+        else{
+            return AnyView(loading)
+        }
+    }
+    
+    var loading: some View {
+       VStack {
+          Text("Loading")
+            .foregroundColor(.white)
+       }
     }
 }
 /*
