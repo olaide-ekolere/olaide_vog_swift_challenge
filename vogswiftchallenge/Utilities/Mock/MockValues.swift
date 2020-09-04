@@ -14,8 +14,8 @@ class MockValues {
           "message": "User Retrieved",
           "data":
           {
-             "firstName": "Johnny B"
-             "userName": "iOS User"
+             "firstName": "Johnny B",
+             "userName": "iOS User",
              "lastName": "Goode"
           }
        }
