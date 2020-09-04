@@ -30,6 +30,7 @@
 		17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D0250299FA0079AC13 /* UserResponseView.swift */; };
 		17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */; };
 		17F149D62502B32D0079AC13 /* UserUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149D52502B32D0079AC13 /* UserUpdate.swift */; };
+		17F149DB2502B7590079AC13 /* UserUpdateFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		17F149D0250299FA0079AC13 /* UserResponseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseView.swift; sourceTree = "<group>"; };
 		17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcher.swift; sourceTree = "<group>"; };
 		17F149D52502B32D0079AC13 /* UserUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdate.swift; sourceTree = "<group>"; };
+		17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUpdateFetcherTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		17F149AC250192DC0079AC13 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				17F149D92502B7120079AC13 /* UserUpdate */,
 				17F149B72501DBC10079AC13 /* UserProfile */,
 				17F149AD250192E60079AC13 /* UserAPI */,
 				17F149BE2501E1AD0079AC13 /* Mocks.swift */,
@@ -273,6 +276,14 @@
 			children = (
 				17F149D32502B0B60079AC13 /* UserUpdateFetcher.swift */,
 				17F149D52502B32D0079AC13 /* UserUpdate.swift */,
+			);
+			path = UserUpdate;
+			sourceTree = "<group>";
+		};
+		17F149D92502B7120079AC13 /* UserUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				17F149DA2502B7590079AC13 /* UserUpdateFetcherTest.swift */,
 			);
 			path = UserUpdate;
 			sourceTree = "<group>";
@@ -432,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */,
+				17F149DB2502B7590079AC13 /* UserUpdateFetcherTest.swift in Sources */,
 				17F149B92501DC0B0079AC13 /* UserProfileViewModelTest.swift in Sources */,
 				17F149BF2501E1AD0079AC13 /* Mocks.swift in Sources */,
 			);

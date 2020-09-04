@@ -1,8 +1,8 @@
 //
-//  UserFetcherTest.swift
+//  UserUpdateFetcherTest.swift
 //  vogswiftchallengeTests
 //
-//  Created by Olaide Nojeem Ekeolere on 03/09/2020.
+//  Created by Olaide Nojeem Ekeolere on 04/09/2020.
 //  Copyright © 2020 Olaide Nojeem Ekeolere. All rights reserved.
 //
 
@@ -10,20 +10,20 @@ import XCTest
 
 @testable import vogswiftchallenge
 
-
-class UserFetcherTest: XCTestCase {
-
-    var userFetcher: UserFetcher!
+class UserUpdateFetcherTest: XCTestCase {
+    var userUpdateFetcher: UserUpdateFetchable!
+    var userUpdate: UserUpdate!
     
     var mocks: Mocks!
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         self.mocks = Mocks()
+        self.userUpdate = UserUpdate(firstName: "Johnny B", lastName: "Goode")
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
         
         let session = URLSession(configuration: config)
-        userFetcher = UserFetcher(session: session)
+        userUpdateFetcher = UserUpdateFetcher(session: session)
     }
 
     override func tearDown() {
@@ -33,10 +33,10 @@ class UserFetcherTest: XCTestCase {
         URLProtocolMock.error = nil
     }
 
-    func testFetchUserSucceeded() {
-        let fetchUserUrl = URL(string: Fixtures.url)
-        URLProtocolMock.testURLs = [fetchUserUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
-        let publisher = userFetcher.userDetails(withToken: mocks.authorizationToken)
+    func testUserUpdateSucceeded() {
+        let userUpdateUrl = URL(string: Fixtures.updateUrl)
+        URLProtocolMock.testURLs = [userUpdateUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
+        let publisher = userUpdateFetcher.performUserUpdate(userUpdate: self.userUpdate, withToken: mocks.authorizationToken)
         XCTAssertNotNil(publisher)
         let cancellable = publisher.sink (
           receiveCompletion: { (completion) in
@@ -59,11 +59,11 @@ class UserFetcherTest: XCTestCase {
         cancellable.cancel()
     }
 
-    func testFetchUserInvalidResponse() {
-        let fetchUserUrl = URL(string: Fixtures.url)
-        URLProtocolMock.testURLs = [fetchUserUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
+    func testUserUpdateInvalidResponse() {
+        let userUpdateUrl = URL(string: Fixtures.updateUrl)
+        URLProtocolMock.testURLs = [userUpdateUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
         URLProtocolMock.response = mocks.invalidResponse
-        let publisher = userFetcher.userDetails(withToken: mocks.authorizationToken)
+        let publisher = userUpdateFetcher.performUserUpdate(userUpdate: self.userUpdate, withToken: mocks.authorizationToken)
         XCTAssertNotNil(publisher)
         let cancellable = publisher.sink (
           receiveCompletion: { (completion) in
@@ -82,10 +82,10 @@ class UserFetcherTest: XCTestCase {
         cancellable.cancel()
     }
 
-    func testFetchUserInvalidData() {
-        let fetchUserUrl = URL(string: Fixtures.url)
-        URLProtocolMock.testURLs = [fetchUserUrl: Data("{{}".utf8)]
-        let publisher = userFetcher.userDetails(withToken: mocks.authorizationToken)
+    func testUserUpdateInvalidData() {
+        let userUpdateUrl = URL(string: Fixtures.updateUrl)
+        URLProtocolMock.testURLs = [userUpdateUrl: Data("{{}".utf8)]
+        let publisher = userUpdateFetcher.performUserUpdate(userUpdate: self.userUpdate, withToken: mocks.authorizationToken)
         XCTAssertNotNil(publisher)
         let cancellable = publisher.sink (
           receiveCompletion: { (completion) in
@@ -104,36 +104,27 @@ class UserFetcherTest: XCTestCase {
         cancellable.cancel()
     }
 
-    func testFetchUserNetworkFailure() {
-        let fetchUserUrl = URL(string: Fixtures.url)
-        URLProtocolMock.testURLs = [fetchUserUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
+    func testUserUpdateNetworkFailure() {
+        let userUpdateUrl = URL(string: Fixtures.updateUrl)
+        URLProtocolMock.testURLs = [userUpdateUrl: Data(Fixtures.fetchUserSuccessResponse.utf8)]
         URLProtocolMock.error = mocks.networkError
-        let publisher = userFetcher.userDetails(withToken: mocks.authorizationToken)
+        let publisher = userUpdateFetcher.performUserUpdate(userUpdate: self.userUpdate, withToken: mocks.authorizationToken)
         XCTAssertNotNil(publisher)
         let cancellable = publisher.sink (
           receiveCompletion: { (completion) in
             switch completion {
             case .failure(let error):
-                XCTAssert(true, error.localizedDescription)
+                XCTAssert(false, error.localizedDescription)
             case .finished:
-                XCTAssert(false, "Call should fail")
+                XCTAssert(true)
             }
           },
           receiveValue: { userResponse in
-            XCTAssertNil(userResponse, "User response should be null")
+            XCTAssertNil(userResponse, "\(userResponse)")
           }
         )
         
         cancellable.cancel()
     }
-
-    /*
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    */
 
 }
