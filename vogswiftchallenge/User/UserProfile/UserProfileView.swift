@@ -24,7 +24,7 @@ struct UserProfileView: View {
     var body: some View {
         NavigationView {
             ZStack { Color.init(red: 143.0/255.0, green: 32.0/255.0, blue: 31.0/255.0).edgesIgnoringSafeArea(.bottom)
-                content()
+                content
             }
             .onAppear(perform: viewModel.fetchUserProfile)
             .navigationBarTitle("User Profile")
@@ -33,16 +33,49 @@ struct UserProfileView: View {
 }
 
 private extension UserProfileView {
-    func content() -> some View {
+    var content: some View {
         if let viewModel = viewModel.dataSource {
-            return AnyView(UserResponseView(userUpdateFetcher: userUpdateFetcher,
+            if(self.viewModel.failed){
+                return AnyView(retryView);
+            }
+            else {
+                return AnyView(UserResponseView(userUpdateFetcher: userUpdateFetcher,
                                             changePasswordFetcher: changePasswordFetcher,
                                             viewModel: viewModel,
                                             authToken: self.viewModel.authorizationToken)
                 .accessibility(identifier: "UserResponseView"))
+            }
         }
         else{
-            return AnyView(loading)
+            if(self.viewModel.failed){
+                return AnyView(retryView);
+            }
+            else {
+                return AnyView(loading)
+            }
+        }
+    }
+    
+    var retryView: some View {
+         VStack {
+            Text("Could Not Load Profile")
+                .foregroundColor(.white)
+                .padding(.bottom, 8.0)
+                .accessibility(identifier: "profile-error-text")
+            
+            Button(action:{
+                self.viewModel.fetchUserProfile()
+            }) {
+                Text("RETRY")
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+                    .tracking(2)
+                    .padding(.horizontal, 32.0)
+                    .padding(.vertical, 12.0)
+                    .border(Color.white, width: 2)
+                    .cornerRadius(4.0)
+            }
+         .accessibility(identifier: "profile-retry-button")
         }
     }
     

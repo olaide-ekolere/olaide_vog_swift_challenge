@@ -24,7 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let message = "User Retrieved"
         let pwdMessage = "Password Changed"
         let code = "200"
-        let userFetcher = UserFetcherMock(data: Data(MockValues.fetchUserSuccessResponse.utf8))
+        
+        var userData: Data = Data(MockValues.fetchUserSuccessResponse.utf8);
+        #if DEBUG
+        if CommandLine.arguments.contains("failed-user-profile") {
+            userData = Data("".utf8)
+        }
+        #endif
+        let userFetcher = UserFetcherMock(data: userData)
         let viewModel = UserProfileViewModel(userFetcher: userFetcher,
                                              authorizationToken: token)
         let userUpdateFetcherMock = UserUpdateFetcherMock(message: message)

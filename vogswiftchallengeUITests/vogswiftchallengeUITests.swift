@@ -28,14 +28,53 @@ class vogswiftchallengeUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        //User Profile loaded successfully
-        //let userResponseView = app.otherElements["UserResponseView"]
-        //let exists = NSPredicate(format: "exists == 1")
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
         
-        //expectation(for: exists, evaluatedWith: userResponseView, handler: nil)
-        //waitForExpectations(timeout: 15, handler: nil)
+        //Edit Profile loaded successfully
+        let editTitle = app.staticTexts["BASIC INFORMATION"]
+        _ = editTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(editTitle.exists)
         
+        //Change Password loaded successfully
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        XCTAssertTrue(passwordTitle.exists)
     }
+
+    func testLaunchFailed() {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments = ["failed-user-profile"]
+        app.launch()
+        
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
+        
+        //Error message shown
+        let errorTitle = app.staticTexts["profile-error-text"]
+        _ = errorTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(errorTitle.exists)
+        
+        //Edit Profile did not load
+        let editTitle = app.staticTexts["BASIC INFORMATION"]
+        XCTAssertTrue(!editTitle.exists)
+        
+        //Change Password did not load
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        XCTAssertTrue(!passwordTitle.exists)
+        
+        
+        //Retry button is visible
+        let retryButton = app.buttons["profile-retry-button"]
+        XCTAssertTrue(retryButton.exists)
+        
+        //Cant tap the retry button
+        retryButton.tap()
+    }
+    
+    //func testEditDetailsValidation
 
     /*
     func testLaunchPerformance() {

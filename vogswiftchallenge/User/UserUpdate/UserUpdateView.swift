@@ -22,6 +22,7 @@ struct UserUpdateView: View {
                     HStack {
                         Text("BASIC INFORMATION")
                             .padding(.leading, 24.0)
+                            .accessibility(identifier: "edit-title-text")
                     }
                     .frame(maxWidth: .infinity, minHeight: 36.0, alignment: .leading)
                     .background(Color.init(red: 239.0/239.0, green: 239.0/255.0, blue: 243.0/255.0))
