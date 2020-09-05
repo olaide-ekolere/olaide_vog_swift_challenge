@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ChangePasswordView: View {
+    //@Environment(\.firstResponder) private var firstResponder: ObjectIdentifier
     @ObservedObject var viewModel : ChangePasswordViewModel
     init(viewModel : ChangePasswordViewModel) {
         self.viewModel = viewModel
@@ -86,6 +87,7 @@ private extension ChangePasswordView {
             SecureField("", text: $viewModel.newPassword)
                 .disabled(viewModel.isLoading)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .accessibility(identifier: "new-password-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
@@ -98,6 +100,7 @@ private extension ChangePasswordView {
             SecureField("", text: $viewModel.confirmPassword)
                 .disabled(viewModel.isLoading)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .accessibility(identifier: "confirm-password-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }

@@ -26,6 +26,13 @@ class ChangePasswordViewModel : ObservableObject {
          authorizationToken: String) {
         self.changePasswordFetcher = changePasswordFetcher
         self.authorizationToken = authorizationToken
+        #if DEBUG
+        if CommandLine.arguments.contains("filled-password") ||
+            CommandLine.arguments.contains("failed-change-password") {
+            currentPassword = "oldpassword"
+            newPassword = "newpassword"
+        }
+        #endif
     }
     
     

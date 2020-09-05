@@ -277,6 +277,168 @@ class vogswiftchallengeUITests: XCTestCase {
                
     }
 
+    func testNewPasswordValidation(){
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+               
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
+               
+        //Edit Profile loaded successfully
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        _ = passwordTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(passwordTitle.exists)
+        
+        //Current Password field exists
+        let currentPasswordField = app.secureTextFields["current-password-field"]
+        XCTAssertTrue(currentPasswordField.exists)
+        
+        //New Password field exists
+        let newPasswordField = app.secureTextFields["new-password-field"]
+        XCTAssertTrue(newPasswordField.exists)
+        
+        //enter current password
+        currentPasswordField.tap()
+        currentPasswordField.typeText("Olaide")
+        
+        //Save changes button exists
+        let saveButton = app.buttons["change-password-button"]
+        XCTAssertTrue(saveButton.exists)
+               
+        //press saveButton
+        saveButton.tap()
+               
+        //verify first name validation
+        let valueTitle = app.staticTexts["New Password must be at least 4 characters"]
+        _ = valueTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(valueTitle.exists)
+               
+    }
+
+    func testConfirmPasswordValidation(){
+        continueAfterFailure = false
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments = ["filled-password"]
+        app.launch()
+               
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
+               
+        //Edit Profile loaded successfully
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        _ = passwordTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(passwordTitle.exists)
+        
+        //Confirm Password field exists
+        let confirmPasswordField = app.secureTextFields["confirm-password-field"]
+        XCTAssertTrue(confirmPasswordField.exists)
+        
+        
+        //Save changes button exists
+        let saveButton = app.buttons["change-password-button"]
+        XCTAssertTrue(saveButton.exists)
+        
+        //press saveButton
+        saveButton.tap()
+        
+
+        //verify first name validation
+        let valueTitle = app.staticTexts["Re-enter Password not match New Password"]
+        _ = valueTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(valueTitle.exists)
+        
+        confirmPasswordField.tap()
+        confirmPasswordField.typeText("confirmpassword\n")
+        sleep(2)
+               //press saveButton
+        saveButton.tap()
+        _ = valueTitle.waitForExistence(timeout: 2)
+        XCTAssertTrue(valueTitle.exists)
+    }
+
+    func testChangePasswordSuccessfull(){
+        continueAfterFailure = false
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments = ["filled-password"]
+        app.launch()
+               
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
+               
+        //Edit Profile loaded successfully
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        _ = passwordTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(passwordTitle.exists)
+        
+        //Confirm Password field exists
+        let confirmPasswordField = app.secureTextFields["confirm-password-field"]
+        XCTAssertTrue(confirmPasswordField.exists)
+        
+        
+        //Save changes button exists
+        let saveButton = app.buttons["change-password-button"]
+        XCTAssertTrue(saveButton.exists)
+        
+        confirmPasswordField.tap()
+        confirmPasswordField.typeText("newpassword\n")
+        sleep(2)
+        //press saveButton
+        saveButton.tap()
+        
+
+        //verify first name validation
+        let valueTitle = app.staticTexts["Password Changed"]
+        _ = valueTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(valueTitle.exists)
+               
+    }
+
+    func testChangePasswordFailed(){
+        continueAfterFailure = false
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launchArguments = ["failed-change-password"]
+        app.launch()
+               
+        //Page title exists
+        let title = app.navigationBars.staticTexts["User Profile"]
+        XCTAssertTrue(title.exists)
+               
+        //Edit Profile loaded successfully
+        let passwordTitle = app.staticTexts["PASSWORD"]
+        _ = passwordTitle.waitForExistence(timeout: 5)
+        XCTAssertTrue(passwordTitle.exists)
+        
+        //Confirm Password field exists
+        let confirmPasswordField = app.secureTextFields["confirm-password-field"]
+        XCTAssertTrue(confirmPasswordField.exists)
+        
+        
+        //Save changes button exists
+        let saveButton = app.buttons["change-password-button"]
+        XCTAssertTrue(saveButton.exists)
+        
+        confirmPasswordField.tap()
+        confirmPasswordField.typeText("newpassword\n")
+        sleep(2)
+        //press saveButton
+        saveButton.tap()
+        
+
+        //verify first name validation
+        let valueTitle = app.staticTexts["Invalid Old Password"]
+        _ = valueTitle.waitForExistence(timeout: 5)
+        
+        XCTAssertTrue(valueTitle.exists)
+               
+    }
+
     /*
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {

@@ -21,8 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         // Create the SwiftUI view that provides the window contents.
         let token = "wihcw8yr394fvberfvg378"
-        let pwdMessage = "Password Changed"
-        let code = "200"
         
         var userData: Data = Data(MockValues.fetchUserSuccessResponse.utf8);
         #if DEBUG
@@ -34,6 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         #if DEBUG
         if CommandLine.arguments.contains("failed-user-update") {
             message = "Session has expired"
+        }
+        #endif
+        var pwdMessage = "Password Changed"
+        var code = "200"
+        #if DEBUG
+        if CommandLine.arguments.contains("failed-change-password") {
+            pwdMessage = "Invalid Old Password"
+            code = "400"
         }
         #endif
         let userFetcher = UserFetcherMock(data: userData)
