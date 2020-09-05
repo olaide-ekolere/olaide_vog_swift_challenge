@@ -46,6 +46,7 @@ struct UserUpdateView: View {
                 .font(.body)
                 .padding(.top, 4.0)
                 .padding(.bottom, 8.0)
+                .accessibility(identifier: "update-message")
             Button(action:{
                 if (!self.viewModel.isLoading) {
                     self.validateForm()
@@ -60,6 +61,7 @@ struct UserUpdateView: View {
                     .border(Color.white, width: 2)
                     .cornerRadius(4.0)
             }
+        .accessibility(identifier: "update-profile-button")
         }
     }
 }
@@ -74,6 +76,7 @@ private extension UserUpdateView {
             TextField("e.g. coolion", text: $viewModel.userName)
             .disabled(true)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .accessibility(identifier: "username-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
@@ -83,9 +86,10 @@ private extension UserUpdateView {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
                 .padding(.top, 4)
                 .padding(.bottom, 4)
-            TextField("e.g. coolion", text: $viewModel.firstName)
+            TextField("e.g. John", text: $viewModel.firstName)
                 .disabled(viewModel.isLoading)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                .accessibility(identifier: "first-name-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
@@ -95,9 +99,10 @@ private extension UserUpdateView {
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
                 .padding(.top, 4)
                 .padding(.bottom, 4)
-            TextField("e.g. coolion", text: $viewModel.lastName)
+            TextField("e.g. Billy", text: $viewModel.lastName)
             .disabled(viewModel.isLoading)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .accessibility(identifier: "last-name-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }

@@ -16,7 +16,7 @@ class UserUpdateViewModelTest: XCTestCase {
     let userResponse: UserResponse = UserResponse(message: "User Retrieved", data: UserResponse.UserData(firstName: "Johnny B", lastName: "Goode", userName: "iOS User"))
     let userUpdate: UserUpdate = UserUpdate(firstName: "Tracey", lastName: "Chapman")
     let successMessage: String = "User Retrieved"
-    let failedMessage: String = "Token has expired"
+    let failedMessage: String = "Session has expired"
     override func setUp() {
         mocks = Mocks()
     }

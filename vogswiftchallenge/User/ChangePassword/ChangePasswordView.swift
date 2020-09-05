@@ -58,6 +58,7 @@ struct ChangePasswordView: View {
                     .border(Color.white, width: 2)
                     .cornerRadius(4.0)
             }
+        .accessibility(identifier: "change-password-button")
         }
     }
 }
@@ -72,6 +73,7 @@ private extension ChangePasswordView {
             SecureField("", text: $viewModel.currentPassword)
                 .disabled(viewModel.isLoading)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .accessibility(identifier: "current-password-field")
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
