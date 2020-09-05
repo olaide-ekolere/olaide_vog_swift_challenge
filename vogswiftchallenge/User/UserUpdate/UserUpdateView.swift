@@ -45,9 +45,11 @@ struct UserUpdateView: View {
                 .padding(.top, 8.0)
                 .padding(.bottom, 8.0)
             Button(action:{
-                self.validateForm()
+                if (!self.viewModel.isLoading) {
+                    self.validateForm()
+                }
             }) {
-                Text("SAVE CHANGES")
+                Text(self.viewModel.isLoading ? "UPDATING..." : "SAVE CHANGES")
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .tracking(3)
@@ -94,6 +96,8 @@ private extension UserUpdateView {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
     }
+    
+    
     
     func validateForm() {
         print(self.viewModel.firstName)
