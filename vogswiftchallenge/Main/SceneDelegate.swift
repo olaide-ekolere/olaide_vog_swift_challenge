@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,14 +19,41 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let token = "wihcw8yr394fvberfvg378"
+        
+        var userData: Data = Data(MockValues.fetchUserSuccessResponse.utf8);
+        #if DEBUG
+        if CommandLine.arguments.contains("failed-user-profile") {
+            userData = Data("".utf8)
+        }
+        #endif
+        var message: String = "User Retrieved"
+        #if DEBUG
+        if CommandLine.arguments.contains("failed-user-update") {
+            message = "Session has expired"
+        }
+        #endif
+        var pwdMessage = "Password Changed"
+        var code = "200"
+        #if DEBUG
+        if CommandLine.arguments.contains("failed-change-password") {
+            pwdMessage = "Invalid Old Password"
+            code = "400"
+        }
+        #endif
+        let userFetcher = UserFetcherMock(data: userData)
+        let viewModel = UserProfileViewModel(userFetcher: userFetcher,
+                                             authorizationToken: token)
+        let userUpdateFetcherMock = UserUpdateFetcherMock(message: message)
+        let changePasswordFetcherMock = ChangePasswordFetcherMock(message: pwdMessage, code: code)
+        
+        let userProfileView = UserProfileView(viewModel: viewModel, userUpdateFetcher: userUpdateFetcherMock, changePasswordFetcher: changePasswordFetcherMock)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: userProfileView)
             self.window = window
             window.makeKeyAndVisible()
         }
