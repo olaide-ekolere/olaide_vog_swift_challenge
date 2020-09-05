@@ -11,8 +11,10 @@ import Foundation
 struct ChangePassword: Codable {
     let currentPassword: String
     let newPassword: String
-    init(currentPassword: String, newPassword: String) {
+    let confirmPassword: String
+    init(currentPassword: String, newPassword: String, confirmPassword: String) {
         self.currentPassword = currentPassword
         self.newPassword = newPassword
+        self.confirmPassword = confirmPassword
     }
 }

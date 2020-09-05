@@ -39,6 +39,10 @@
 		17F149E8250315000079AC13 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149E7250315000079AC13 /* ChangePasswordResponse.swift */; };
 		17F149EA250315B20079AC13 /* ChangePasswordFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149E9250315B20079AC13 /* ChangePasswordFetcher.swift */; };
 		17F149EF250317C10079AC13 /* ChangePasswordFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149EE250317C10079AC13 /* ChangePasswordFetcherTest.swift */; };
+		17F149F125038C9C0079AC13 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F025038C9C0079AC13 /* ChangePasswordViewModel.swift */; };
+		17F149F3250391830079AC13 /* ChangePasswordResponseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */; };
+		17F149F5250392AB0079AC13 /* ChangePasswordFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */; };
+		17F149F7250394680079AC13 /* ChangePasswordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F6250394680079AC13 /* ChangePasswordViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		17F149E7250315000079AC13 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		17F149E9250315B20079AC13 /* ChangePasswordFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordFetcher.swift; sourceTree = "<group>"; };
 		17F149EE250317C10079AC13 /* ChangePasswordFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordFetcherTest.swift; sourceTree = "<group>"; };
+		17F149F025038C9C0079AC13 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponseViewModel.swift; sourceTree = "<group>"; };
+		17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordFetcherMock.swift; sourceTree = "<group>"; };
+		17F149F6250394680079AC13 /* ChangePasswordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +324,9 @@
 				17F149E52503138D0079AC13 /* ChangePassword.swift */,
 				17F149E7250315000079AC13 /* ChangePasswordResponse.swift */,
 				17F149E9250315B20079AC13 /* ChangePasswordFetcher.swift */,
+				17F149F025038C9C0079AC13 /* ChangePasswordViewModel.swift */,
+				17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */,
+				17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				17F149EE250317C10079AC13 /* ChangePasswordFetcherTest.swift */,
+				17F149F6250394680079AC13 /* ChangePasswordViewModelTest.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 				17F1499F250051580079AC13 /* Responses.swift in Sources */,
 				17F1496A250017C50079AC13 /* AppDelegate.swift in Sources */,
 				17F149C325024DCB0079AC13 /* UserResponseViewModel.swift in Sources */,
+				17F149F3250391830079AC13 /* ChangePasswordResponseViewModel.swift in Sources */,
 				17F149A725006EB10079AC13 /* UserFetcher.swift in Sources */,
 				17F1496C250017C50079AC13 /* SceneDelegate.swift in Sources */,
 				17F149E12502C3990079AC13 /* UserUpdateFetcherMock.swift in Sources */,
@@ -470,11 +483,13 @@
 				17F149CB250274D70079AC13 /* MockValues.swift in Sources */,
 				17F149E8250315000079AC13 /* ChangePasswordResponse.swift in Sources */,
 				17F149C925026A740079AC13 /* UserFetcherMock.swift in Sources */,
+				17F149F5250392AB0079AC13 /* ChangePasswordFetcherMock.swift in Sources */,
 				17F149A12500540A0079AC13 /* UserError.swift in Sources */,
 				17F149A5250069C90079AC13 /* Parsing.swift in Sources */,
 				17F149DD2502BC2D0079AC13 /* UserUpdateViewModel.swift in Sources */,
 				17F149E62503138D0079AC13 /* ChangePassword.swift in Sources */,
 				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
+				17F149F125038C9C0079AC13 /* ChangePasswordViewModel.swift in Sources */,
 				17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
 				17F149E32502D3290079AC13 /* UserUpdateView.swift in Sources */,
@@ -489,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F149DF2502C3630079AC13 /* UserUpdateViewModelTest.swift in Sources */,
+				17F149F7250394680079AC13 /* ChangePasswordViewModelTest.swift in Sources */,
 				17F149AF250193490079AC13 /* UserFetcherTest.swift in Sources */,
 				17F149DB2502B7590079AC13 /* UserUpdateFetcherTest.swift in Sources */,
 				17F149B92501DC0B0079AC13 /* UserProfileViewModelTest.swift in Sources */,

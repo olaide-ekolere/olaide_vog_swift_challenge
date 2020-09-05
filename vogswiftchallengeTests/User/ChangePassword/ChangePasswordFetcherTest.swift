@@ -20,7 +20,7 @@ class ChangePasswordFetcherTest: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         self.mocks = Mocks()
-        self.changePassword = ChangePassword(currentPassword: "oldpassword", newPassword: "newpassword")
+        self.changePassword = ChangePassword(currentPassword: "oldpassword", newPassword: "newpassword", confirmPassword: "newpassword")
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
         
