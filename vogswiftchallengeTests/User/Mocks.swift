@@ -33,6 +33,7 @@ class Mocks {
 struct Fixtures {
     static let url = "https://api.foo.com/profiles/mine"
     static let updateUrl = "https://api.foo.com/profiles/update"
+    static let passwordUrl = "https://api.foo.com/password/change"
     static let fetchUserSuccessResponse = """
     {
        "message": "User Retrieved",
@@ -42,6 +43,12 @@ struct Fixtures {
           "userName": "iOS User",
           "lastName": "Goode"
        }
+    }
+    """
+    static let changePasswordSuccessResponse = """
+    {
+       "message": "User Retrieved",
+       "code": "200"
     }
     """
     

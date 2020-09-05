@@ -39,7 +39,8 @@ struct UserUpdateView: View {
                 }
             }
             //Spacer(minLength: 24.0)
-            Text(self.viewModel.dataSource)
+            Text(self.viewModel.dataSource == "User Retrieved" ? "Updated Successfully" :
+            self.viewModel.dataSource)
                 .foregroundColor(.white)
                 .font(.body)
                 .padding(.top, 8.0)

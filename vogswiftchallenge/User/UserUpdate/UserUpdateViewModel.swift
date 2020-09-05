@@ -54,7 +54,7 @@ class UserUpdateViewModel : ObservableObject {
             },
             receiveValue: { [weak self] userResponseViewModel in
                 guard let self = self else { return }
-                self.dataSource = "Update Successfull" //userResponseViewModel.item.message
+                self.dataSource = userResponseViewModel.item.message
                 let data = userResponseViewModel.item.data
                 self.firstName = data.firstName
                 self.lastName = data.lastName
