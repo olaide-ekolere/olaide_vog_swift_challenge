@@ -11,10 +11,13 @@ import SwiftUI
 struct UserProfileView: View {
     @ObservedObject var viewModel: UserProfileViewModel
     private let userUpdateFetcher: UserUpdateFetchable
+    private let changePasswordFetcher: ChangePasswordFetchable
     init(viewModel: UserProfileViewModel,
-    userUpdateFetcher: UserUpdateFetchable) {
+    userUpdateFetcher: UserUpdateFetchable,
+    changePasswordFetcher: ChangePasswordFetchable) {
         self.viewModel = viewModel
         self.userUpdateFetcher = userUpdateFetcher
+        self.changePasswordFetcher = changePasswordFetcher
         UINavigationBar.appearance().backgroundColor = .none
         
     }
@@ -32,7 +35,10 @@ struct UserProfileView: View {
 private extension UserProfileView {
     func content() -> some View {
         if let viewModel = viewModel.dataSource {
-            return AnyView(UserResponseView(userUpdateFetcher: userUpdateFetcher, viewModel: viewModel, authToken: self.viewModel.authorizationToken)
+            return AnyView(UserResponseView(userUpdateFetcher: userUpdateFetcher,
+                                            changePasswordFetcher: changePasswordFetcher,
+                                            viewModel: viewModel,
+                                            authToken: self.viewModel.authorizationToken)
                 .accessibility(identifier: "UserResponseView"))
         }
         else{

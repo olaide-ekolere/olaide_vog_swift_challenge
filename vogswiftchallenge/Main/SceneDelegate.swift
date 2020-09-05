@@ -22,11 +22,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let token = "wihcw8yr394fvberfvg378"
         let message = "User Retrieved"
+        let pwdMessage = "Password Changed"
+        let code = "200"
         let userFetcher = UserFetcherMock(data: Data(MockValues.fetchUserSuccessResponse.utf8))
         let viewModel = UserProfileViewModel(userFetcher: userFetcher,
                                              authorizationToken: token)
         let userUpdateFetcherMock = UserUpdateFetcherMock(message: message)
-        let userProfileView = UserProfileView(viewModel: viewModel, userUpdateFetcher: userUpdateFetcherMock)
+        let changePasswordFetcherMock = ChangePasswordFetcherMock(message: pwdMessage, code: code)
+        
+        let userProfileView = UserProfileView(viewModel: viewModel, userUpdateFetcher: userUpdateFetcherMock, changePasswordFetcher: changePasswordFetcherMock)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

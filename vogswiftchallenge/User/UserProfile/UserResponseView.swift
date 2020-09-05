@@ -12,8 +12,13 @@ struct UserResponseView: View {
     private let viewModel: UserResponseViewModel
     private let authToken: String
     private let userUpdateFetcher: UserUpdateFetchable
-    init(userUpdateFetcher: UserUpdateFetchable, viewModel: UserResponseViewModel, authToken: String) {
+    private let changePasswordFetcher: ChangePasswordFetchable
+    init(userUpdateFetcher: UserUpdateFetchable,
+         changePasswordFetcher: ChangePasswordFetchable,
+         viewModel: UserResponseViewModel,
+         authToken: String) {
         self.userUpdateFetcher = userUpdateFetcher
+        self.changePasswordFetcher = changePasswordFetcher
         self.viewModel = viewModel
         self.authToken = authToken
     }
@@ -21,6 +26,7 @@ struct UserResponseView: View {
         ScrollView(.vertical) {
           VStack {
             UserUpdateView(viewModel: UserUpdateViewModel(item: viewModel.item, userUpdateFetcher: self.userUpdateFetcher, authorizationToken: self.authToken))
+            ChangePasswordView(viewModel: ChangePasswordViewModel(changePasswordFetcher: self.changePasswordFetcher, authorizationToken: self.authToken))
           }
         }
     }

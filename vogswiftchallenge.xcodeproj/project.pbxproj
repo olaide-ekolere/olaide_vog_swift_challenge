@@ -43,6 +43,7 @@
 		17F149F3250391830079AC13 /* ChangePasswordResponseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */; };
 		17F149F5250392AB0079AC13 /* ChangePasswordFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */; };
 		17F149F7250394680079AC13 /* ChangePasswordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F6250394680079AC13 /* ChangePasswordViewModelTest.swift */; };
+		17F149F925039C0E0079AC13 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F149F825039C0E0079AC13 /* ChangePasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponseViewModel.swift; sourceTree = "<group>"; };
 		17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordFetcherMock.swift; sourceTree = "<group>"; };
 		17F149F6250394680079AC13 /* ChangePasswordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModelTest.swift; sourceTree = "<group>"; };
+		17F149F825039C0E0079AC13 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				17F149F025038C9C0079AC13 /* ChangePasswordViewModel.swift */,
 				17F149F2250391830079AC13 /* ChangePasswordResponseViewModel.swift */,
 				17F149F4250392AB0079AC13 /* ChangePasswordFetcherMock.swift */,
+				17F149F825039C0E0079AC13 /* ChangePasswordView.swift */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				17F149E62503138D0079AC13 /* ChangePassword.swift in Sources */,
 				17F149D1250299FA0079AC13 /* UserResponseView.swift in Sources */,
 				17F149F125038C9C0079AC13 /* ChangePasswordViewModel.swift in Sources */,
+				17F149F925039C0E0079AC13 /* ChangePasswordView.swift in Sources */,
 				17F149D42502B0B60079AC13 /* UserUpdateFetcher.swift in Sources */,
 				17F1496E250017C50079AC13 /* ContentView.swift in Sources */,
 				17F149E32502D3290079AC13 /* UserUpdateView.swift in Sources */,
